@@ -1,0 +1,65 @@
+---
+layout: default
+title: Services
+section_id: services
+services:
+  -
+    - title: Custom Development
+      icon: login
+      desc:
+        We can work with you to design, plan and build a custom web application specifically for your business.
+      color:
+    - title: Payment Gateway Integrations
+      icon: credit-card
+      desc:
+        We have built integrations with over 35 of the industries leading payment gateways.
+      color:
+    - title: QuickBooks Integrations
+      icon: book-open
+      desc:
+        Integrate the rest of your business applications with your accounting platform. Reduce data entry and incorrect information.
+      color:
+  -
+    - title: Custom SaaS Development
+      icon: layout
+      desc:
+        Leverage our team to build an applicaton for resale specific to your industry. We can even white-label the support.
+      color: yellow
+    - title: White-Labeled Support
+      icon: layout
+      desc:
+        Supporting custom applications can be challenging. We can put together a program to off first or second tier support to help back up your support teams.
+      color: yellow
+    - title: Application Hosting/Management
+      icon: monitor
+      desc:
+        We can manage and host your application in a private datacenter or utilizing any of hte top cloud hosting providers.
+      color: yellow
+---
+
+<div class='full'>
+  <div class='row'>
+    <div class='special-title centered-text'>
+      <i class='icon-map'></i>
+      <h2>Our services</h2>
+      <p>We are a group passionate about using technology to make businesses run better.</p>
+      <p class='shortline'></p>
+    </div>
+    <div class='two spacing'></div>
+  </div>
+
+  {% for row in page.services %}
+    <div class="row">
+      {% for service in row %}
+        <div class='medium-4 large-4 columns icon-text'>
+          <i class='icon-{{service.icon}} {{service.color}}'></i>
+          <h3>{{service.title}}</h3>
+          <p>{{service.desc}}</p>
+        </div>
+      {% endfor %}
+    </div>
+    {% unless forloop.last %}
+      <div class="spacing"></div>
+    {% endunless %}
+  {% endfor %}
+</div>

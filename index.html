@@ -1,0 +1,60 @@
+---
+layout: default
+title: RykeLabs
+section_id: home
+services:
+  -
+    - title: Custom Development
+      icon: login
+      desc:
+        We can work with you to design, plan and build a custom web application specifically for your business.
+      color:
+    - title: Payment Gateway Integrations
+      icon: credit-card
+      desc:
+        We have built integrations with over 35 of the industries leading payment gateways.
+      color:
+    - title: QuickBooks Integrations
+      icon: book-open
+      desc:
+        Integrate the rest of your business applications with your accounting platform. Reduce data entry and incorrect information.
+      color:
+---
+
+<div class='full bg-3 light'>
+  <div class='row'>
+    <div class='large-6 columns'>
+      <!-- <img class='fadeinleft' src='{{site.url}}/images/ipad-air.png'> -->
+    </div>
+    <div class='large-6 columns'>
+      <h2>Who we are</h2>
+      <p style="color: black;">
+        RykeLabs is a web development shop based in Minneapolis, Minnesota and was established in 2010. We spcialize in the development and integration of SaaS (Software as a service) applications for business.
+      </p>
+      <!-- <a class='button boxed'>Know more</a> -->
+    </div>
+  </div>
+</div>
+
+<div class='full white'>
+  {% for row in page.services %}
+    <div class="row">
+      {% for service in row %}
+        <div class='medium-4 large-4 columns icon-text'>
+          <i class='icon-{{service.icon}} {{service.color}}'></i>
+          <h3>{{service.title}}</h3>
+          <p>{{service.desc}}</p>
+        </div>
+      {% endfor %}
+    </div>
+    {% unless forloop.last %}
+      <div class="spacing"></div>
+    {% endunless %}
+  {% endfor %}
+</div>
+
+<!-- {% include clients.html %} -->
+
+<!-- {% include testimonials.html bg="bg-1" %} -->
+
+{% include get-in-touch.html %}
